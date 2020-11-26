@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-12">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/sqlite-jdbc-3.23.1.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/c_hin/Documents/MMU/Object orientated web programming/Coursework/java project/lib/javax.servlet.jsp-2.2.0.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/c_hin/Documents/MMU/Object orientated web programming/Coursework/java project/lib/javax.servlet-3.1.0.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/c_hin/Documents/MMU/Object orientated web programming/Coursework/java project/lib/jetty-continuation-9.4.22.v20191022.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/c_hin/Documents/MMU/Object orientated web programming/Coursework/java project/lib/jetty-http-9.4.22.v20191022.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/c_hin/Documents/MMU/Object orientated web programming/Coursework/java project/lib/jetty-io-9.4.22.v20191022.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/c_hin/Documents/MMU/Object orientated web programming/Coursework/java project/lib/jetty-security-9.4.22.v20191022.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/c_hin/Documents/MMU/Object orientated web programming/Coursework/java project/lib/jetty-server-9.4.22.v20191022.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/c_hin/Documents/MMU/Object orientated web programming/Coursework/java project/lib/jetty-servlet-9.4.22.v20191022.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/c_hin/Documents/MMU/Object orientated web programming/Coursework/java project/lib/jetty-servlets-9.4.22.v20191022.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/c_hin/Documents/MMU/Object orientated web programming/Coursework/java project/lib/jetty-util-9.4.22.v20191022.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/c_hin/Documents/MMU/Object orientated web programming/Coursework/java project/lib/jetty-xml-9.4.22.v20191022.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

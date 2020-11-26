@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="content-type"
+	content="application/xhtml+xml; charset=UTF-8" />
+<title>Movies DB</title>
+<link rel="stylesheet" href="./css/styles.css" type="text/css" />
+<script src="scripts/jquery.js"></script>
+<script src="scripts/jquery-servlet-connection.js"></script>
+<script src="scripts/ajax-data-handler.js"></script>
+<script src="scripts/ajax-utils.js"></script>
+<script src="scripts/JSON-to-Table-1.0.0.js"></script>
+</head>
+
+<body>
+	<h1>Movies DB</h1>
+	<h2>Servlet Implementation</h2>
+	<input type="button" value="Switch to Restful" id="switch-index-button" />
+	<br />
+	<fieldset>
+		<legend>All Films</legend>
+		<input type="button" value="All films" id="all-films-button" /> <input
+			type="button" value="Clear all films results"
+			id="clear-all-films-button" /> <br /> <label for="data-type">Server
+			Data Type:</label> <select id="data-type">
+			<option value="xml" selected="selected">XML</option>
+			<option value="json">JSON</option>
+			<option value="string">String</option>
+		</select>
+		<div id="all-film-result"></div>
+	</fieldset>
+	<br />
+	<br />
+	<fieldset>
+		<legend>Add Film</legend>
+		<input type="button" value="Add film" id="add-film-button" /> <br />
+		<div id="add-film-boxes" style="display: none;">
+			<form id=add-film-form>
+				Film ID<input type="number" placeholder="Film ID" id="film-id-a"
+					name="film-id-a" /> <br /> Film Title<input type="text"
+					placeholder="Film Title" id="film-title-a" name="film-title-a" />
+				<br /> Year<input type="number" placeholder="Year" id="film-year-a"
+					name="film-year-a" /> <br /> Film Director<input type="text"
+					placeholder="Film Director" id="film-director-a"
+					name="film-director-a" /> <br /> Stars<input type="text"
+					placeholder="Film Stars" id="film-stars-a" name="film-stars-a" />
+				<br /> Review<input type="text" placeholder="Review"
+					id="film-review-a" name="film-review-a" /> <br /> <input
+					type="button" value="Add Film" id="add-film-button-submit" /> <br />
+			</form>
+		</div>
+		<div id="add-film-result"></div>
+	</fieldset>
+	<br />
+	<br />
+	<fieldset>
+		<legend>Delete Film</legend>
+		<input type="button" value="Delete film" id="delete-film-button" /> <br />
+		<div id="delete-film-boxes" style="display: none;">
+			<form id="delete-film-form">
+				Film ID<input type="number" placeholder="Film ID" id="film-id-d"
+					name="film-id-d" /> <br /> <input type="button"
+					value="Delete Film" id="delete-film-button-submit" /> <br />
+			</form>
+		</div>
+		<div id="delete-film-result"></div>
+	</fieldset>
+	<br />
+	<br />
+	<fieldset>
+		<legend>Update Film</legend>
+		<input type="button" value="Update film" id="update-film-button" /> <br />
+		<div id="update-film-boxes" style="display: none;">
+			<form id="update-film-form">
+				Film ID<input type="number" placeholder="Film ID" id="film-id-u"
+					name="film-id-u" /> <br /> Film Title<input type="text"
+					placeholder="Film Title" id="film-title-u" name="film-title-u" />
+				<br /> Year<input type="number" placeholder="Year" id="film-year-u"
+					name="film-year-u" /> <br /> Film Director<input type="text"
+					placeholder="Film Director" id="film-director-u"
+					name="film-director-u" /> <br /> Stars<input type="text"
+					placeholder="Film Stars" id="film-stars-u" name="film-stars-u" />
+				<br /> Review<input type="text" placeholder="Review"
+					id="film-review-u" name="film-review-u" /> <br /> <input
+					type="button" value="Update Film" id="update-film-button-submit" />
+				<br />
+			</form>
+		</div>
+		<div id="update-film-result"></div>
+	</fieldset>
+	<br />
+	<br />
+	<fieldset>
+		<legend>Search Film</legend>
+		<input type="button" value="Search film" id="search-film-button" /> <br />
+		<div id="search-film-boxes" style="display: none;">
+			<form id="search-film-form">
+				Film Title<input type="text" placeholder="Film Title"
+					id="film-title-s" name="film-title-s" /> <br /> <label
+					for="data-type-s">Server Data Type:</label> <select
+					id="data-type-s">
+					<option value="xml" selected="selected">XML</option>
+					<option value="json">JSON</option>
+					<option value="string">String</option>
+				</select> <br /> <input type="button" value="Search Film"
+					id="search-film-button-submit" /> <br />
+			</form>
+		</div>
+		<div id="search-film-result"></div>
+	</fieldset>
+	<br />
+</body>
+</html>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://model" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax21="http://model/xsd" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" targetNamespace="http://model">
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://model/xsd">
+            <xs:complexType name="Film">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="director" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="id" type="xs:int"/>
+                    <xs:element minOccurs="0" name="review" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="stars" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="title" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="year" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax22="http://model/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://model">
+            <xs:import namespace="http://model/xsd"/>
+            <xs:element name="updateFilm">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="f" nillable="true" type="ax22:Film"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="updateFilmResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="searchFilm">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="searchStr" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="searchFilmResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax22:Film"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="listFilm">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="listFilmResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax22:Film"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteFilm">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="id" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteFilmResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="addFilm">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="f" nillable="true" type="ax22:Film"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="addFilmResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="addFilmRequest">
+        <wsdl:part name="parameters" element="ns:addFilm"/>
+    </wsdl:message>
+    <wsdl:message name="addFilmResponse">
+        <wsdl:part name="parameters" element="ns:addFilmResponse"/>
+    </wsdl:message>
+    <wsdl:message name="deleteFilmRequest">
+        <wsdl:part name="parameters" element="ns:deleteFilm"/>
+    </wsdl:message>
+    <wsdl:message name="deleteFilmResponse">
+        <wsdl:part name="parameters" element="ns:deleteFilmResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updateFilmRequest">
+        <wsdl:part name="parameters" element="ns:updateFilm"/>
+    </wsdl:message>
+    <wsdl:message name="updateFilmResponse">
+        <wsdl:part name="parameters" element="ns:updateFilmResponse"/>
+    </wsdl:message>
+    <wsdl:message name="searchFilmRequest">
+        <wsdl:part name="parameters" element="ns:searchFilm"/>
+    </wsdl:message>
+    <wsdl:message name="searchFilmResponse">
+        <wsdl:part name="parameters" element="ns:searchFilmResponse"/>
+    </wsdl:message>
+    <wsdl:message name="listFilmRequest">
+        <wsdl:part name="parameters" element="ns:listFilm"/>
+    </wsdl:message>
+    <wsdl:message name="listFilmResponse">
+        <wsdl:part name="parameters" element="ns:listFilmResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="FilmDAOPortType">
+        <wsdl:operation name="addFilm">
+            <wsdl:input message="ns:addFilmRequest" wsaw:Action="urn:addFilm"/>
+            <wsdl:output message="ns:addFilmResponse" wsaw:Action="urn:addFilmResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="deleteFilm">
+            <wsdl:input message="ns:deleteFilmRequest" wsaw:Action="urn:deleteFilm"/>
+            <wsdl:output message="ns:deleteFilmResponse" wsaw:Action="urn:deleteFilmResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateFilm">
+            <wsdl:input message="ns:updateFilmRequest" wsaw:Action="urn:updateFilm"/>
+            <wsdl:output message="ns:updateFilmResponse" wsaw:Action="urn:updateFilmResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="searchFilm">
+            <wsdl:input message="ns:searchFilmRequest" wsaw:Action="urn:searchFilm"/>
+            <wsdl:output message="ns:searchFilmResponse" wsaw:Action="urn:searchFilmResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="listFilm">
+            <wsdl:input message="ns:listFilmRequest" wsaw:Action="urn:listFilm"/>
+            <wsdl:output message="ns:listFilmResponse" wsaw:Action="urn:listFilmResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="FilmDAOSoap11Binding" type="ns:FilmDAOPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="addFilm">
+            <soap:operation soapAction="urn:addFilm" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteFilm">
+            <soap:operation soapAction="urn:deleteFilm" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateFilm">
+            <soap:operation soapAction="urn:updateFilm" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchFilm">
+            <soap:operation soapAction="urn:searchFilm" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listFilm">
+            <soap:operation soapAction="urn:listFilm" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="FilmDAOSoap12Binding" type="ns:FilmDAOPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="addFilm">
+            <soap12:operation soapAction="urn:addFilm" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteFilm">
+            <soap12:operation soapAction="urn:deleteFilm" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateFilm">
+            <soap12:operation soapAction="urn:updateFilm" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchFilm">
+            <soap12:operation soapAction="urn:searchFilm" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listFilm">
+            <soap12:operation soapAction="urn:listFilm" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="FilmDAOHttpBinding" type="ns:FilmDAOPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="addFilm">
+            <http:operation location="addFilm"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteFilm">
+            <http:operation location="deleteFilm"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateFilm">
+            <http:operation location="updateFilm"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchFilm">
+            <http:operation location="searchFilm"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listFilm">
+            <http:operation location="listFilm"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="FilmDAO">
+        <wsdl:port name="FilmDAOHttpSoap11Endpoint" binding="ns:FilmDAOSoap11Binding">
+            <soap:address location="http://localhost:8080//services/model/FilmDAO"/>
+        </wsdl:port>
+        <wsdl:port name="FilmDAOHttpSoap12Endpoint" binding="ns:FilmDAOSoap12Binding">
+            <soap12:address location="http://localhost:8080//services/model/FilmDAO"/>
+        </wsdl:port>
+        <wsdl:port name="FilmDAOHttpEndpoint" binding="ns:FilmDAOHttpBinding">
+            <http:address location="http://localhost:8080//services/model/FilmDAO"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
